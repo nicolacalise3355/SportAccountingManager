@@ -10,11 +10,11 @@ public class Workday {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    int id;
+    private int id;
 
-    String date;
-    int revenue;
-    int costs;
+    private String date;
+    private int revenue;
+    private int costs;
 
     public Workday(String date, int revenue, int costs) {
         this.date = date;

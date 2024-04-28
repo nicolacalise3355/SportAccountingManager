@@ -12,7 +12,7 @@ The project involves a backend software for managing the accounting in a company
 
 - REST API
 - Java 21
-- Springboot 3.2.5
+- Springboot
 - JWT (for auth)
 - MySQL
 - CRUD Operations 
