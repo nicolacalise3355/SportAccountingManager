@@ -1,4 +1,4 @@
-package com.nicolacalise.SportAccountingManager.exceptions;
+package com.nicolacalise.SportAccountingManager.exceptions.types;
 
 public class WorkdayException extends Exception{
 
