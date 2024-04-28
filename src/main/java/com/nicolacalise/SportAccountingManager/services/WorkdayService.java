@@ -58,6 +58,11 @@ public class WorkdayService {
         this.workdayDao.save(tmp);
     }
 
+    /**
+     *
+     * @param id workday id
+     * @throws WorkdayNotFoundException workday not found
+     */
     public void deleteWorkday(int id) throws WorkdayNotFoundException {
         Workday tmp = this.workdayDao.findById(id).orElseThrow(() -> new WorkdayNotFoundException(WorkdayMessages.WORKDAY_NOT_FOUND, 0));
         this.workdayDao.delete(tmp);
