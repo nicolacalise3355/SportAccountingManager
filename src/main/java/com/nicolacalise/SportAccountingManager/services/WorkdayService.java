@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
 @Service
 public class WorkdayService {
@@ -28,6 +27,11 @@ public class WorkdayService {
         return this.workdayDao.findAll();
     }
 
+    /**
+     *
+     * @param w Workday
+     * @throws WorkdayException workday not valid
+     */
     public void insertWorkday(Workday w) throws WorkdayException {
         if(w == null) throw new WorkdayException(WorkdayMessages.WORKDAY_NOT_VALID, 0);
         this.workdayDao.save(w);
@@ -37,8 +41,7 @@ public class WorkdayService {
      *
      * @param id workday id
      * @return Workday object
-     * @throws WorkdayException id not valid
-     * @throws NoSuchElementException workday not found
+     * @throws WorkdayNotFoundException workday not found
      */
     public Workday getWorkday(int id) throws WorkdayNotFoundException {
         return this.workdayDao.findById(id).orElseThrow(() -> new WorkdayNotFoundException(WorkdayMessages.WORKDAY_NOT_FOUND, 0));

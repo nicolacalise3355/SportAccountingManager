@@ -67,4 +67,12 @@ public class Member {
     public void setLevel(int level) {
         this.level = level;
     }
+
+    public Set<Attendance> getAttendances() {
+        return attendances;
+    }
+
+    public void setAttendances(Set<Attendance> attendances) {
+        this.attendances = attendances;
+    }
 }
