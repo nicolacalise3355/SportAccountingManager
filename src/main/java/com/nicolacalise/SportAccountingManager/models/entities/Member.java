@@ -2,6 +2,8 @@ package com.nicolacalise.SportAccountingManager.models.entities;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -21,7 +23,7 @@ public class Member {
     private int level;
 
     @OneToMany(mappedBy="member")
-    Set<Attendance> attendances;
+    Set<Attendance> attendances = new HashSet<>();
 
     public Member(String name, String surname, int level) {
         this.name = name;
@@ -74,5 +76,9 @@ public class Member {
 
     public void setAttendances(Set<Attendance> attendances) {
         this.attendances = attendances;
+    }
+
+    public void addAttendance(Attendance a){
+        this.attendances.add(a);
     }
 }

@@ -21,7 +21,7 @@ public class MemberService {
     /**
      * @return List of Member
      */
-    public List<Member> getMember(){ return this.memberDAO.findAll(); }
+    public List<Member> getMembers(){ return this.memberDAO.findAll(); }
 
     /**
      *
