@@ -20,6 +20,11 @@ public class Attendance {
         this.date = date;
     }
 
+    public Attendance(String date, Member m){
+        this.date = date;
+        this.member = m;
+    }
+
     public Attendance() {}
 
     public int getId() {

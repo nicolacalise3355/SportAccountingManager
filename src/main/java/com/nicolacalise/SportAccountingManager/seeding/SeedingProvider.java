@@ -6,9 +6,7 @@ import com.nicolacalise.SportAccountingManager.models.entities.Workday;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Component
 public class SeedingProvider {
@@ -23,14 +21,18 @@ public class SeedingProvider {
         return l;
     }
 
-    public Iterable<Member> generateMembersWithAttendance() {
+    public Iterable<Member> generateMembersWithoutAttendance() {
         List<Member> l = new ArrayList<>();
+        l.add(new Member("Francesco", "Verdi", 6));
+        l.add(new Member("Mario", "Bianchi", 5));
+        l.add(new Member("Marco", "Rossi", 1));
+        return l;
+    }
 
-        Member m1 = new Member("Nicola", "Calise", 6);
-        m1.addAttendance(new Attendance("01/01/2024"));
-        m1.addAttendance(new Attendance("01/01/2024"));
-        l.add(m1);
-
+    public Iterable<Attendance> generateAttendancesWithMember(Member m){
+        List<Attendance> l = new ArrayList<>();
+        l.add(new Attendance("01/01/2024", m));
+        l.add(new Attendance("02/01/2024", m));
         return l;
     }
 }

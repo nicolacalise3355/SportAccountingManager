@@ -1,7 +1,9 @@
 package com.nicolacalise.SportAccountingManager.seeding;
 
+import com.nicolacalise.SportAccountingManager.dao.AttendanceDAO;
 import com.nicolacalise.SportAccountingManager.dao.MemberDAO;
 import com.nicolacalise.SportAccountingManager.dao.WorkdayDAO;
+import com.nicolacalise.SportAccountingManager.models.entities.Member;
 import com.nicolacalise.SportAccountingManager.models.entities.Workday;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,20 +15,19 @@ public class SeedingService {
 
     private WorkdayDAO workdayDAO;
     private MemberDAO memberDAO;
+    private AttendanceDAO attendanceDAO;
 
     @Autowired
-    public SeedingService(WorkdayDAO workdayDAO, MemberDAO memberDAO, SeedingProvider seedingProvider) {
+    public SeedingService(WorkdayDAO workdayDAO, MemberDAO memberDAO, AttendanceDAO attendanceDAO, SeedingProvider seedingProvider) {
         this.workdayDAO = workdayDAO;
         this.memberDAO = memberDAO;
+        this.attendanceDAO = attendanceDAO;
         this.seedingProvider = seedingProvider;
     }
 
     public void initDatabase(){
-        //Separa salvataggio di un member con gli attendance
-        //mettili dopo
-        //fai la save di un mmeber, ti ritorna member con id, setti il memner dentro l attendance e salvi attendance
-        this.workdayDAO.saveAll(this.seedingProvider.generateWorkdays());
-        this.memberDAO.saveAll(this.seedingProvider.generateMembersWithAttendance());
+        this.seedWorkdays();
+        this.seedMember();
     }
 
     public void cleanDatabase() {
@@ -38,8 +39,15 @@ public class SeedingService {
         this.workdayDAO.saveAll(this.seedingProvider.generateWorkdays());
     }
 
-    public void seedMembersWithAttendance(){
-        this.memberDAO.saveAll(this.seedingProvider.generateMembersWithAttendance());
+    public void seedMember(){
+        this.memberDAO.saveAll(this.seedingProvider.generateMembersWithoutAttendance());
+
+        Member tmp1 = this.memberDAO.save(new Member("Nicola", "Calise", 6));
+        this.seedAttendanceWithMember(tmp1);
+    }
+
+    public void seedAttendanceWithMember(Member m){
+        this.attendanceDAO.saveAll(this.seedingProvider.generateAttendancesWithMember(m));
     }
 
     public void cleanWorkdays(){
@@ -48,5 +56,6 @@ public class SeedingService {
 
     public void cleanMembers(){
         this.memberDAO.deleteAll();
+        this.attendanceDAO.deleteAll();
     }
 }
