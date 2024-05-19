@@ -1,8 +1,7 @@
 package com.nicolacalise.SportAccountingManager.controllers;
 
 import com.nicolacalise.SportAccountingManager.models.entities.Member;
-import com.nicolacalise.SportAccountingManager.models.entities.Workday;
-import com.nicolacalise.SportAccountingManager.services.MemberService;
+import com.nicolacalise.SportAccountingManager.services.entityServices.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

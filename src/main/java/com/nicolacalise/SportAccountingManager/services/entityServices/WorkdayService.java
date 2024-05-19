@@ -1,4 +1,4 @@
-package com.nicolacalise.SportAccountingManager.services;
+package com.nicolacalise.SportAccountingManager.services.entityServices;
 
 import com.nicolacalise.SportAccountingManager.dao.WorkdayDAO;
 import com.nicolacalise.SportAccountingManager.exceptions.types.WorkdayException;

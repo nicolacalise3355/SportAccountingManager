@@ -7,7 +7,7 @@ import com.nicolacalise.SportAccountingManager.models.entities.Workday;
 import com.nicolacalise.SportAccountingManager.models.utility.Message;
 import com.nicolacalise.SportAccountingManager.models.utility.messages.ConfirmMessage;
 import com.nicolacalise.SportAccountingManager.models.utility.messages.ErrorMessage;
-import com.nicolacalise.SportAccountingManager.services.WorkdayService;
+import com.nicolacalise.SportAccountingManager.services.entityServices.WorkdayService;
 import com.nicolacalise.SportAccountingManager.staticValues.ParamsMessages;
 import com.nicolacalise.SportAccountingManager.staticValues.WorkdayMessages;
 import com.nicolacalise.SportAccountingManager.validators.EntityValidators;

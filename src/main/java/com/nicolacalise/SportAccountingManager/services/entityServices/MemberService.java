@@ -1,4 +1,4 @@
-package com.nicolacalise.SportAccountingManager.services;
+package com.nicolacalise.SportAccountingManager.services.entityServices;
 
 import com.nicolacalise.SportAccountingManager.dao.MemberDAO;
 import com.nicolacalise.SportAccountingManager.exceptions.types.MemberException;
