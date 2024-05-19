@@ -33,7 +33,7 @@ public class GoogleCalendarConfig {
                 .build();
     }
 
-    private Credential authorize() throws Exception {
+    public Credential authorize() throws Exception {
         InputStream in = getClass().getResourceAsStream("/credentials.json");
         GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(in));
 

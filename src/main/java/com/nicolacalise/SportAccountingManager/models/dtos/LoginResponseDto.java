@@ -1,6 +1,6 @@
-package com.nicolacalise.SportAccountingManager.models.utility;
+package com.nicolacalise.SportAccountingManager.models.dtos;
 
-public class LoginResponse {
+public class LoginResponseDto {
 
     private String token;
     private long expiresIn;

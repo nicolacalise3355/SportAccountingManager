@@ -1,4 +1,4 @@
-package com.nicolacalise.SportAccountingManager.services;
+package com.nicolacalise.SportAccountingManager.services.google;
 
 import com.google.api.client.util.DateTime;
 import com.google.api.services.calendar.Calendar;

@@ -1,7 +1,7 @@
 package com.nicolacalise.SportAccountingManager.controllers;
 
 import com.google.api.client.util.DateTime;
-import com.nicolacalise.SportAccountingManager.services.GoogleCalendarService;
+import com.nicolacalise.SportAccountingManager.services.google.GoogleCalendarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

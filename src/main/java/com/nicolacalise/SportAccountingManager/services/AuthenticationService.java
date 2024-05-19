@@ -1,8 +1,8 @@
 package com.nicolacalise.SportAccountingManager.services;
 
 import com.nicolacalise.SportAccountingManager.dao.UserDAO;
-import com.nicolacalise.SportAccountingManager.dtos.LoginDto;
-import com.nicolacalise.SportAccountingManager.dtos.RegisterUserDto;
+import com.nicolacalise.SportAccountingManager.models.dtos.LoginDto;
+import com.nicolacalise.SportAccountingManager.models.dtos.RegisterUserDto;
 import com.nicolacalise.SportAccountingManager.models.entities.User;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

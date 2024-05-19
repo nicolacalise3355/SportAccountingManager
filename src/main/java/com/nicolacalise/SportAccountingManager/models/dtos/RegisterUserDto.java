@@ -1,4 +1,4 @@
-package com.nicolacalise.SportAccountingManager.dtos;
+package com.nicolacalise.SportAccountingManager.models.dtos;
 
 public class RegisterUserDto {
 
