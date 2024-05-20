@@ -1,11 +1,11 @@
 package com.nicolacalise.SportAccountingManager.controllers.google;
 
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver;
 import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
 import com.google.api.client.googleapis.auth.oauth2.GoogleTokenResponse;
 import com.nicolacalise.SportAccountingManager.config.GoogleCalendarConfig;
 import com.nicolacalise.SportAccountingManager.services.google.GoogleCalendarService;
+import com.nicolacalise.SportAccountingManager.staticValues.GoogleMessages;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -47,6 +47,6 @@ public class GoogleAuthController {
 
         this.googleCalendarService.initializeCalendarService();
 
-        return ResponseEntity.ok("Authorization successful. You can now use the calendar.");
+        return ResponseEntity.ok(GoogleMessages.AUTH_OK);
     }
 }
